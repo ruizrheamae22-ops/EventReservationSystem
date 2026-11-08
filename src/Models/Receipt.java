@@ -16,6 +16,6 @@ public class Receipt {
         this.date = date;
         this.amount = amount;
     }
-
+    
     
 }
