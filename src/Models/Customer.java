@@ -9,4 +9,5 @@ public class Customer extends Person {
     public String toString() {
         return String.format("[%d] %-20s %s", getId(), getName(), getContact());
     }
+    
 }
