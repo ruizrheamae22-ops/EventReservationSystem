@@ -17,5 +17,18 @@ public class Receipt {
         this.amount = amount;
     }
 
-   
+    @Override
+    public String toString() {
+        return "==================================\n"
+             + "        KISSBONE COVE\n"
+             + "   Event Reservation Receipt\n"
+             + "==================================\n"
+             + String.format("Receipt No : %05d%n", bookingId)
+             + "Customer   : " + customerName + "\n"
+             + "Event      : " + eventName + "\n"
+             + "Date       : " + date + "\n"
+             + String.format("Amount     : PHP %,.2f%n", amount)
+             + "==================================\n"
+             + "      Thank you for booking!";
+    }
 }
