@@ -17,5 +17,14 @@ public class Receipt {
         this.amount = amount;
     }
     
+    @Override
+    public String toString() {
+        return "==================================\n"
+             + "        KISSBONE COVE\n"
+             + "   Event Reservation Receipt\n"
+             + "==================================\n"
+            
+    }
+
     
 }
