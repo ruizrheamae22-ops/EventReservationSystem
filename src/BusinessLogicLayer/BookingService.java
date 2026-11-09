@@ -17,6 +17,15 @@ public class BookingService {
         this.customers = customers;
         this.events = events;
     }
+    public Booking create(int customerId, int eventId, LocalDate date) {
+        if (customers.getById(customerId) == null) throw new IllegalArgumentException("Customer not found.");
+        if (events.getById(eventId) == null) throw new IllegalArgumentException("Event not found.");
+        if (date.isBefore(LocalDate.now())) throw new IllegalArgumentException("Date cannot be in the past.");
+        Booking b = new Booking(customerId, eventId, date);
+        bookings.add(b);
+        return b;
+    }
 
+   
     
 }
