@@ -25,6 +25,23 @@ public class BookingService {
         bookings.add(b);
         return b;
     }
+    public void reserve(int bookingId) {
+        Booking b = bookings.getById(bookingId);
+        if (b == null) throw new IllegalArgumentException("Booking not found.");
+        if (b.isReserved()) throw new IllegalArgumentException("Booking is already reserved.");
+        for (Booking other : bookings.getAll()) {
+            if (other.isReserved() && other.getDate().equals(b.getDate()))
+                throw new IllegalArgumentException("That date is already reserved by another booking.");
+        }
+        b.setStatus(Booking.RESERVED);
+        bookings.update(b);
+    }
+
+    public List<Booking> getAll() { return bookings.getAll(); }
+
+    public Customer getCustomer(int id) { return customers.getById(id); }
+
+    public Event getEvent(int id) { return events.getById(id); }
 
    
     
