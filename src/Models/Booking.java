@@ -17,7 +17,13 @@ public class Booking {
         this.eventId = eventId;
         this.date = date;
     }
-    
-
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public int getCustomerId() { return customerId; }
+    public int getEventId() { return eventId; }
+    public LocalDate getDate() { return date; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+    public boolean isReserved() { return RESERVED.equals(status); }
     
 }
