@@ -25,15 +25,5 @@ public class BookingRepository implements IRepository<Booking> {
         return new ArrayList<>(items);
     }
 
-    @Override
-    public void update(Booking item) {
-        for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).getId() == item.getId()) { items.set(i, item); return; }
-        }
-    }
-
-    @Override
-    public boolean delete(int id) {
-        return items.removeIf(i -> i.getId() == id);
-    }
+    
 }
