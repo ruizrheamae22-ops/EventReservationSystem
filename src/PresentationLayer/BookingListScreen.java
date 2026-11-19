@@ -41,13 +41,5 @@ public class BookingListScreen extends BaseScreen {
         }
     }
 
-    private void list() {
-        System.out.printf("%-4s %-18s %-20s %-11s %s%n", "ID", "Customer", "Event", "Date", "Status");
-        for (Booking b : bookings.getAll()) {
-            System.out.printf("%-4d %-18s %-20s %-11s %s%n", b.getId(),
-                bookings.getCustomer(b.getCustomerId()).getName(),
-                bookings.getEvent(b.getEventId()).getName(),
-                b.getDate(), b.getStatus());
-        }
-    }
+   
 }
